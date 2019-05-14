@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.list {
+  list-style: none;
+}
+
+.dropdown {
+  float: center;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: white;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 0px 12px;
+  text-decoration: none;
+  display: center;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: lightgrey;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
