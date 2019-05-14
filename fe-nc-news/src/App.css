@@ -20,18 +20,16 @@
 .dropdown-content {
   display: none;
   background-color: white;
-}
-
-.dropdown-content a {
   float: none;
   color: black;
   padding: 0px 12px;
   text-decoration: none;
   display: center;
-  text-align: left;
+  text-align: center;
+  font-size: 15px;
 }
 
-.dropdown-content a:hover {
+.dropdown-content p:hover {
   background-color: lightgrey;
 }
 
