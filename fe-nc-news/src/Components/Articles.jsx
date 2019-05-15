@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
 import { getArticles } from "../Api";
-import { Link } from "@reach/router";
 import ArticleCard from "./ArticleCard";
 
 class Articles extends React.Component {
@@ -10,15 +9,14 @@ class Articles extends React.Component {
   };
 
   render() {
+    // console.log("Articles", this.props);
     return (
       <div>
         {this.state.articles.map(article => {
           return (
-            <div key={article.article_id}>
+            <div key={article.article_id} className="card">
               <ul className="list">
-                <Link to={`/articles/${article.article_id}`}>
-                  <ArticleCard article={article} />
-                </Link>
+                <ArticleCard article={article} />
               </ul>
             </div>
           );
