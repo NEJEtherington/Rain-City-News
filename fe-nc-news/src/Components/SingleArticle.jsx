@@ -17,9 +17,9 @@ class SingleArticle extends React.Component {
         <h3>{article.title}</h3>
         <h5>Topic: {article.topic}</h5>
         <p>{article.body}</p>
-        <button>Dislike</button>
-        <p>{article.votes}</p>
         <button>Like</button>
+        <p>{article.votes}</p>
+        <button>Dislike</button>
         <h4>Comments</h4>
         <Comments id={this.props.id} />
       </div>

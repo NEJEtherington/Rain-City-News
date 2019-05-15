@@ -6,9 +6,9 @@ const CommentCard = ({ comment }) => {
       <h5>Author: {comment.author}</h5>
       <h5>Posted: {comment.created_at}</h5>
       <p>{comment.body}</p>
-      <button>Dislike</button>
-      <p>{comment.votes}</p>
       <button>Like</button>
+      <p>{comment.votes}</p>
+      <button>Dislike</button>
     </li>
   );
   return newComment;
