@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import Topics from "./Topics";
+import { Link } from "@reach/router";
 
 class Header extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class Header extends React.Component {
       <div>
         <h1>NC News</h1>
         <button>Create Post</button>
-        <button onClick={this.handleTopicClick}>Topics</button>
+        <Link to="/topics">Topics</Link>
         <button>Login/Sign Up</button>
         <div className="dropdown">
           <button className="dropbtn">Sort by</button>
@@ -23,10 +23,6 @@ class Header extends React.Component {
       </div>
     );
   }
-
-  handleTopicClick = event => {
-    console.log("topics button clicked!");
-  };
 }
 
 export default Header;

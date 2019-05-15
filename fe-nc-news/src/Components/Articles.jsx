@@ -16,7 +16,7 @@ class Articles extends React.Component {
           return (
             <div key={article.article_id}>
               <ul className="list">
-                <Link to={`articles/${article.article_id}`}>
+                <Link to={`${article.article_id}`}>
                   <ArticleCard article={article} />
                 </Link>
               </ul>
@@ -28,7 +28,7 @@ class Articles extends React.Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
+    console.log("mounted(Articles)");
     getArticles().then(articles => {
       this.setState({ articles });
     });

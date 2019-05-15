@@ -10,6 +10,12 @@ export const getArticles = query => {
   );
 };
 
+export const getSingleArticle = id => {
+  return Axios.get(`${url}/articles/${id}`).then(({ data: { article } }) => {
+    return article;
+  });
+};
+
 export const getTopics = query => {
   return Axios.get(`${url}/topics`, { params: query }).then(
     ({ data: { topics } }) => {
