@@ -7,15 +7,16 @@ class SingleArticle extends React.Component {
   };
 
   render() {
+    const { article } = this.state;
     return (
       <div>
-        <h5>Author: {this.state.article.author}</h5>
-        <h5>Posted: {this.state.article.created_at}</h5>
-        <h3>{this.state.article.title}</h3>
-        <h5>Topic: {this.state.article.topic}</h5>
-        <p>{this.state.article.body}</p>
+        <h5>Author: {article.author}</h5>
+        <h5>Posted: {article.created_at}</h5>
+        <h3>{article.title}</h3>
+        <h5>Topic: {article.topic}</h5>
+        <p>{article.body}</p>
         <button>Downvote</button>
-        <p>{this.state.article.votes}</p>
+        <p>{article.votes}</p>
         <button>Upvote</button>
         <h5>Comments</h5>
       </div>
@@ -23,7 +24,7 @@ class SingleArticle extends React.Component {
   }
 
   componentDidMount() {
-    console.log("mounted(SingleArticle)", this.props);
+    console.log("mounted(SingleArticle)");
     getSingleArticle(this.props.id).then(article => {
       this.setState({ article });
     });
