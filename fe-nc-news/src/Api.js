@@ -23,3 +23,11 @@ export const getTopics = query => {
     }
   );
 };
+
+export const getComments = id => {
+  return Axios.get(`${url}/articles/${id}/comments`).then(
+    ({ data: { comments } }) => {
+      return comments;
+    }
+  );
+};

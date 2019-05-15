@@ -5,6 +5,7 @@ import Header from "./Components/Header";
 import Articles from "./Components/Articles";
 import Topics from "./Components/Topics";
 import SingleArticle from "./Components/SingleArticle";
+import Comments from "./Components/Comments";
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
           <Articles path="/articles" />
           <Articles path="/topics/:topic" />
           <SingleArticle path="/articles/:id" />
+          <Comments path="/articles/:id/comments" />
           <Topics path="/topics" />
         </Router>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { getSingleArticle } from "../Api";
+import Comments from "./Comments";
 
 class SingleArticle extends React.Component {
   state = {
@@ -7,6 +8,7 @@ class SingleArticle extends React.Component {
   };
 
   render() {
+    // console.log("SingleArticle", this.props);
     const { article } = this.state;
     return (
       <div>
@@ -15,16 +17,16 @@ class SingleArticle extends React.Component {
         <h3>{article.title}</h3>
         <h5>Topic: {article.topic}</h5>
         <p>{article.body}</p>
-        <button>Downvote</button>
+        <button>Dislike</button>
         <p>{article.votes}</p>
-        <button>Upvote</button>
-        <h5>Comments</h5>
+        <button>Like</button>
+        <h4>Comments</h4>
+        <Comments id={this.props.id} />
       </div>
     );
   }
 
   componentDidMount() {
-    console.log("mounted(SingleArticle)");
     getSingleArticle(this.props.id).then(article => {
       this.setState({ article });
     });
