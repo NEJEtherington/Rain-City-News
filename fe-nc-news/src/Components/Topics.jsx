@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import { Link } from "@reach/router";
 import { getTopics } from "../Api";
 
 class Topics extends React.Component {
@@ -14,7 +15,9 @@ class Topics extends React.Component {
           return (
             <div key={topic.slug}>
               <ul className="list">
-                <li>{topic.description}</li>
+                <Link to={`/topics/${topic.slug}`}>
+                  <li>{topic.description}</li>
+                </Link>
               </ul>
             </div>
           );
@@ -24,7 +27,6 @@ class Topics extends React.Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
     getTopics().then(topics => {
       this.setState({ topics });
     });

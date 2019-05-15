@@ -13,6 +13,7 @@ class App extends React.Component {
         <Header />
         <Router>
           <Articles path="/articles" />
+          <Articles path="/topics/:topic" />
           <SingleArticle path="/articles/:id" />
           <Topics path="/topics" />
         </Router>
