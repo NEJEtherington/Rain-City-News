@@ -8,7 +8,9 @@ class Header extends React.Component {
       <div>
         <h1>NC News</h1>
         <button>Create Post</button>
-        <Link to="/topics">Topics</Link>
+        <Link to="/topics">
+          <button>Topics</button>
+        </Link>
         <button>Login/Sign Up</button>
         <div className="dropdown">
           <button className="dropbtn">Sort by</button>
