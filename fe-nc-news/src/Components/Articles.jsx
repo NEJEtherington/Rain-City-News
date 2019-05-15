@@ -12,6 +12,14 @@ class Articles extends React.Component {
     // console.log("Articles", this.props);
     return (
       <div>
+        <div className="dropdown">
+          <h5 className="dropbtn">Sort by</h5>
+          <div className="dropdown-content">
+            <h5>Title</h5>
+            <h5>Author</h5>
+            <h5>Date</h5>
+          </div>
+        </div>
         {this.state.articles.map(article => {
           return (
             <div key={article.article_id} className="card">

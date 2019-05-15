@@ -20,17 +20,6 @@ class Header extends React.Component {
               <button>Submit</button>
             </form>
           </li>
-          {/* <li>
-            <div className="dropdown">
-              <button className="dropbtn">Sort by</button>
-              <div className="dropdown-content">
-                <h5>Title</h5>
-                <h5>Topic</h5>
-                <h5>Author</h5>
-                <h5>Date</h5>
-              </div>
-            </div>
-          </li> */}
         </ul>
       </div>
     );

@@ -31,7 +31,7 @@ li {
   display: inline;
 }
 
-/* .dropdown {
+.dropdown {
   float: center;
   overflow: hidden;
 }
@@ -60,7 +60,7 @@ li {
 
 .dropdown:hover .dropdown-content {
   display: block;
-} */
+}
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
