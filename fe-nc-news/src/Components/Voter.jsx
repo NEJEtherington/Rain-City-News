@@ -9,12 +9,18 @@ export default class Voter extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.handleVote(this.props.id, 1)}>Like</button>
+        <button
+          onClick={() => this.handleVote(this.props.id, 1)}
+          disabled={this.state.votes === 1}
+        >
+          Like
+        </button>
         <p>{this.state.votes + this.props.votes}</p>
         <button
           onClick={() => {
             this.handleVote(this.props.id, -1);
           }}
+          disabled={this.state.votes === -1}
         >
           Dislike
         </button>
