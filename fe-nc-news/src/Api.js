@@ -37,3 +37,13 @@ export const getUser = username => {
     return user;
   });
 };
+
+export const patchArticleVotes = (id, direction) => {
+  return Axios.patch(`${url}/articles/${id}`, { inc_votes: direction });
+};
+
+export const patchCommentVotes = (id, direction) => {
+  return Axios.patch(`${url}/comments/${id}`, {
+    inc_votes: direction
+  });
+};

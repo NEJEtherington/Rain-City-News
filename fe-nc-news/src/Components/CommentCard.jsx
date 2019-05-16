@@ -1,4 +1,5 @@
 import React from "react";
+import Voter from "./Voter";
 
 const CommentCard = ({ comment }) => {
   const newComment = (
@@ -6,9 +7,7 @@ const CommentCard = ({ comment }) => {
       <h5>Author: {comment.author}</h5>
       <h5>Posted: {comment.created_at}</h5>
       <p>{comment.body}</p>
-      <button>Like</button>
-      <p>{comment.votes}</p>
-      <button>Dislike</button>
+      <Voter votes={comment.votes} id={comment.comment_id} type="comment" />
     </li>
   );
   return newComment;
