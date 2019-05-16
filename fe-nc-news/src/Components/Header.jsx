@@ -2,30 +2,41 @@ import React from "react";
 import "../App.css";
 import { Link } from "@reach/router";
 
-class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <nav>
-          <ul className="navbar">
-            <Link to="/articles">
-              <li className="ncnews">NC News</li>
+const Header = props => {
+  return (
+    <div>
+      <nav>
+        <ul className="navbar">
+          <Link to="/articles">
+            <li className="ncnews">NC News</li>
+          </Link>
+          <Link to="/topics">
+            <li className="header">
+              <button>Topics</button>
+            </li>
+          </Link>
+          {!props.loggedInUser ? (
+            <Link to="/login">
+              <li className="header">
+                <button>Login</button>
+              </li>
             </Link>
-            <Link to="/topics">
-              <li className="header">Topics </li>
+          ) : (
+            <Link Link to="/login">
+              <li>
+                <button onClick={props.logoutUser}>
+                  Logout: {props.loggedInUser}
+                </button>
+              </li>
             </Link>
-            <li className="header">Login/Sign Up</li> <li>Create Post</li>
-          </ul>
-        </nav>
-        {/* <li className="header">
-            <form>
-              <input type="text" placeholder="Filter by author or topic" />
-              <button>Submit</button>
-            </form>
-          </li> */}
-      </div>
-    );
-  }
-}
+          )}
+          <li>
+            <button>Create Post</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
 export default Header;
