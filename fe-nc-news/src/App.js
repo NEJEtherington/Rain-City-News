@@ -24,7 +24,10 @@ class App extends React.Component {
         <Router>
           <Articles path="/articles" />
           <Articles path="/topics/:topic" />
-          <SingleArticle path="/articles/:id" />
+          <SingleArticle
+            path="/articles/:id"
+            username={this.state.currentUser}
+          />
           <Comments path="/articles/:id/comments" />
           <Topics path="/topics" />
           <LoginBox path="/login" loginUser={this.loginUser} />

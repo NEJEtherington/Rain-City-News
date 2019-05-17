@@ -25,7 +25,7 @@ class SingleArticle extends React.Component {
               type="article"
             />
             <h4>Comments</h4>
-            <Comments id={this.props.id} />
+            <Comments id={this.props.id} username={this.props.username} />
           </div>
         ) : (
           <p>loading...</p>

@@ -47,3 +47,11 @@ export const patchCommentVotes = (id, direction) => {
     inc_votes: direction
   });
 };
+
+export const postComment = (id, username, body) => {
+  console.log(id, username, body);
+  return Axios.post(`${url}/articles/${id}/comments`, {
+    username: `${username}`,
+    body: `${body}`
+  });
+};

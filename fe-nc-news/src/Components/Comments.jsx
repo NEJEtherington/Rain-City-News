@@ -1,17 +1,22 @@
 import React from "react";
 import "../App.css";
-import { getComments } from "../Api";
+import { getComments, postComment } from "../Api";
 import CommentCard from "./CommentCard";
 
 class Comments extends React.Component {
   state = {
-    comments: []
+    comments: [],
+    commentInput: null
   };
 
   render() {
-    // console.log("Comments", this.props);
     return (
       <div>
+        <form onSubmit={this.handleSubmit}>
+          <br />
+          <textarea onChange={this.handleInput} type="text" />
+          <button>Post comment!</button>
+        </form>
         {this.state.comments.map(comment => {
           return (
             <div key={comment.comment_id}>
@@ -30,6 +35,19 @@ class Comments extends React.Component {
       this.setState({ comments });
     });
   }
+
+  handleInput = event => {
+    this.setState({ commentInput: event.target.value });
+  };
+
+  handleSubmit = event => {
+    const { id, username } = this.props;
+    const { commentInput } = this.state;
+    event.preventDefault();
+    username
+      ? postComment(id, username, commentInput)
+      : alert("please log in to post a comment!");
+  };
 }
 
 export default Comments;
