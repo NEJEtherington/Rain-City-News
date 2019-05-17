@@ -15,17 +15,17 @@ const Header = props => {
               <button>Topics</button>
             </li>
           </Link>
-          {!props.loggedInUser ? (
+          {!props.currentUser ? (
             <Link to="/login">
               <li className="header">
                 <button>Login</button>
               </li>
             </Link>
           ) : (
-            <Link Link to="/login">
+            <Link to="/login">
               <li>
                 <button onClick={props.logoutUser}>
-                  Logout: {props.loggedInUser}
+                  Logout: {props.currentUser}
                 </button>
               </li>
             </Link>

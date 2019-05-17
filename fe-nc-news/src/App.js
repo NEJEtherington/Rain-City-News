@@ -11,14 +11,14 @@ import Voter from "./Components/Voter";
 
 class App extends React.Component {
   state = {
-    loggedInUser: ""
+    currentUser: ""
   };
 
   render() {
     return (
       <div className="App">
         <Header
-          loggedInUser={this.state.loggedInUser}
+          currentUser={this.state.currentUser}
           logoutUser={this.logoutUser}
         />
         <Router>
@@ -35,11 +35,11 @@ class App extends React.Component {
   }
 
   loginUser = username => {
-    this.setState({ loggedInUser: username }, () => navigate("/articles"));
+    this.setState({ currentUser: username }, () => navigate("/articles"));
   };
 
   logoutUser = () => {
-    this.setState({ loggedInUser: "" }, () => navigate("/login"));
+    this.setState({ currentUser: "" }, () => navigate("/login"));
   };
 }
 
