@@ -15,9 +15,15 @@ class Articles extends React.Component {
         <div className="dropdown">
           <h5 className="dropbtn">Sort by</h5>
           <div className="dropdown-content">
-            <button onClick={this.handlePostedClick}>Posted</button>
-            <button onClick={this.handleCommentsClick}>Comments</button>
-            <button onClick={this.handleVotesClick}>Votes</button>
+            <button onClick={this.handleClick} value={"created_at"}>
+              Posted
+            </button>
+            <button onClick={this.handleClick} value={"comment_count"}>
+              Comments
+            </button>
+            <button onClick={this.handleClick} value={"votes"}>
+              Votes
+            </button>
           </div>
         </div>
         {this.state.articles.map(article => {
@@ -33,17 +39,8 @@ class Articles extends React.Component {
     );
   }
 
-  //refactor the three functions below into a single function?
-  handleCommentsClick = () => {
-    this.setState({ sortBy: "comment_count" });
-  };
-
-  handlePostedClick = () => {
-    this.setState({ sortBy: "created_at" });
-  };
-
-  handleVotesClick = () => {
-    this.setState({ sortBy: "votes" });
+  handleClick = event => {
+    this.setState({ sortBy: event.currentTarget.value });
   };
 
   componentDidMount() {
