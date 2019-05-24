@@ -15,7 +15,7 @@ class SingleArticle extends React.Component {
         {article ? (
           <div>
             <h5>Author: {article.author}</h5>
-            <h5>Posted: {article.created_at}</h5>
+            <h5>Posted: {new Date(article.created_at).toLocaleString()}</h5>
             <h3>{article.title}</h3>
             <h5>Topic: {article.topic}</h5>
             <p>{article.body}</p>
