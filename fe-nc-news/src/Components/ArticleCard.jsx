@@ -9,7 +9,7 @@ const ArticleCard = ({ article }) => {
       </Link>
       <p>Topic: {article.topic}</p>
       <p>Author: {article.author}</p>
-      <p>Posted: {article.created_at}</p>
+      <p>Posted: {new Date(article.created_at).toLocaleString()}</p>
       <p>Votes: {article.votes}</p>
       <p>Comments: {article.comment_count}</p>
       <br />
