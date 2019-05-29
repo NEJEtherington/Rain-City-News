@@ -54,3 +54,7 @@ export const postComment = (id, username, body) => {
     body: `${body}`
   });
 };
+
+export const deleteComment = comment_id => {
+  return Axios.delete(`${url}/comments/${comment_id}`);
+};

@@ -21,7 +21,7 @@ class Comments extends React.Component {
           return (
             <div key={comment.comment_id}>
               <ul className="list">
-                <CommentCard comment={comment} />
+                <CommentCard comment={comment} username={this.props.username} />
               </ul>
             </div>
           );
