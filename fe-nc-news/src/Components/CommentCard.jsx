@@ -2,7 +2,7 @@ import React from "react";
 import Voter from "./Voter";
 import { deleteComment } from "../Api";
 
-const CommentCard = ({ comment, username }) => {
+const CommentCard = ({ comment, username, updateForDeletedComment }) => {
   const { author, created_at, body, votes, comment_id } = comment;
   const newComment = (
     <li>
@@ -11,7 +11,11 @@ const CommentCard = ({ comment, username }) => {
       <p>{body}</p>
       <Voter votes={votes} id={comment_id} type="comment" />
       {username === author && (
-        <button onClick={() => deleteComment(comment_id)}>
+        <button
+          onClick={() =>
+            deleteComment(comment_id).then(updateForDeletedComment)
+          }
+        >
           Delete Comment
         </button>
       )}

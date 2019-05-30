@@ -15,13 +15,17 @@ class Comments extends React.Component {
         <PostComment
           id={this.props.id}
           username={this.props.username}
-          updateComments={this.updateComments}
+          updatePostedComments={this.updatePostedComments}
         />
         {this.state.comments.map(comment => {
           return (
             <div key={comment.comment_id}>
               <ul className="list">
-                <CommentCard comment={comment} username={this.props.username} />
+                <CommentCard
+                  comment={comment}
+                  username={this.props.username}
+                  updateForDeletedComment={this.updateForDeletedComment}
+                />
               </ul>
             </div>
           );
@@ -36,8 +40,14 @@ class Comments extends React.Component {
     });
   }
 
-  updateComments = newComment => {
+  updatePostedComments = newComment => {
     this.setState({ comments: [newComment, ...this.state.comments] });
+  };
+
+  updateForDeletedComment = () => {
+    getComments(this.props.id).then(comments => {
+      this.setState({ comments });
+    });
   };
 }
 
