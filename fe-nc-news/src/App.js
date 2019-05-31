@@ -42,10 +42,20 @@ class App extends React.Component {
 
   loginUser = username => {
     this.setState({ currentUser: username }, () => navigate("/articles"));
+    localStorage.setItem("data", JSON.stringify(this.state.currentUser));
   };
 
   logoutUser = () => {
-    this.setState({ currentUser: "" }, () => navigate("/login"));
+    this.setState({ currentUser: "" });
+    localStorage.removeItem("data");
+  };
+
+  componentDidMount = () => {
+    const data = localStorage.getItem("data");
+    if (data) {
+      const state = JSON.parse(data);
+      this.setState({ currentUser: state });
+    }
   };
 }
 
