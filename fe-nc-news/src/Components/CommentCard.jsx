@@ -9,7 +9,7 @@ const CommentCard = ({ comment, username, updateForDeletedComment }) => {
       <h5>Author: {author}</h5>
       <h5>Posted: {new Date(created_at).toLocaleString()}</h5>
       <p>{body}</p>
-      <Voter votes={votes} id={comment_id} type="comment" />
+      {username && <Voter votes={votes} id={comment_id} type="comment" />}
       {username === author && (
         <button
           onClick={() =>

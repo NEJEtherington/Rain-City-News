@@ -12,11 +12,13 @@ class Comments extends React.Component {
   render() {
     return (
       <div>
-        <PostComment
-          id={this.props.id}
-          username={this.props.username}
-          updatePostedComments={this.updatePostedComments}
-        />
+        {this.props.username && (
+          <PostComment
+            id={this.props.id}
+            username={this.props.username}
+            updatePostedComments={this.updatePostedComments}
+          />
+        )}
         {this.state.comments.map(comment => {
           return (
             <div key={comment.comment_id}>

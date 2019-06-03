@@ -19,11 +19,13 @@ class SingleArticle extends React.Component {
             <h3>{article.title}</h3>
             <h5>Topic: {article.topic}</h5>
             <p>{article.body}</p>
-            <Voter
-              votes={article.votes}
-              id={article.article_id}
-              type="article"
-            />
+            {this.props.username && (
+              <Voter
+                votes={article.votes}
+                id={article.article_id}
+                type="article"
+              />
+            )}
             <h4>Comments</h4>
             <Comments id={this.props.id} username={this.props.username} />
           </div>
