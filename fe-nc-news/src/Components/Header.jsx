@@ -28,9 +28,6 @@ const Header = props => {
               </button>
             </li>
           )}
-          <li>
-            <button>Create Post</button>
-          </li>
         </ul>
       </nav>
     </div>
