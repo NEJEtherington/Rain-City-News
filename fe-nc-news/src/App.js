@@ -10,7 +10,7 @@ import Voter from "./Components/Voter";
 
 class App extends React.Component {
   state = {
-    currentUser: ""
+    currentUser: null
   };
 
   render() {
@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   loginUser = username => {
-    this.setState({ currentUser: username }, () => navigate("/articles"));
+    this.setState({ currentUser: username });
     localStorage.setItem("data", JSON.stringify(this.state.currentUser));
   };
 
