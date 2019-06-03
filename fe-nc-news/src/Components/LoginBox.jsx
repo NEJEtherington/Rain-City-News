@@ -9,8 +9,12 @@ class LoginBox extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleInput} type="text" />
-        <button>Login</button>
+        <input
+          onChange={this.handleInput}
+          type="text"
+          placeholder="Enter username"
+        />
+        <button>Go!</button>
       </form>
     );
   }

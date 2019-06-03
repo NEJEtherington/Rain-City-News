@@ -6,7 +6,6 @@ import Articles from "./Components/Articles";
 import Topics from "./Components/Topics";
 import SingleArticle from "./Components/SingleArticle";
 import Comments from "./Components/Comments";
-import LoginBox from "./Components/LoginBox";
 import Voter from "./Components/Voter";
 
 class App extends React.Component {
@@ -20,6 +19,7 @@ class App extends React.Component {
         <Header
           currentUser={this.state.currentUser}
           logoutUser={this.logoutUser}
+          loginUser={this.loginUser}
         />
         <Router>
           <Articles path="/articles" />
@@ -30,7 +30,7 @@ class App extends React.Component {
           />
           <Comments path="/articles/:id/comments" />
           <Topics path="/topics" />
-          <LoginBox path="/login" loginUser={this.loginUser} />
+          {/* <LoginBox path="/login" loginUser={this.loginUser} /> */}
           <Voter path="/voter" />
         </Router>
       </div>
