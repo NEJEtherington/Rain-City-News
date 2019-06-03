@@ -3,7 +3,7 @@ import ArticlesList from "./ArticlesList";
 import { getArticles } from "../Api";
 import "../App.css";
 
-export default class ArticlesPage extends Component {
+class ArticlesPage extends Component {
   state = {
     articles: [],
     sortBy: null
@@ -50,3 +50,5 @@ export default class ArticlesPage extends Component {
       });
   }
 }
+
+export default ArticlesPage;

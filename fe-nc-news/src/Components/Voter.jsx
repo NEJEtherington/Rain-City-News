@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { patchArticleVotes, patchCommentVotes } from "../Api";
 
-export default class Voter extends Component {
+class Voter extends Component {
   state = {
     votes: 0
   };
@@ -40,3 +40,5 @@ export default class Voter extends Component {
     });
   };
 }
+
+export default Voter;
