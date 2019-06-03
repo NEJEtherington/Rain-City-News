@@ -28,10 +28,7 @@ class App extends React.Component {
             path="/articles/:id"
             username={this.state.currentUser}
           />
-          <Comments
-            path="/articles/:id/comments"
-            username={this.state.currentUser}
-          />
+          <Comments path="/articles/:id/comments" />
           <Topics path="/topics" />
           <LoginBox path="/login" loginUser={this.loginUser} />
           <Voter path="/voter" />
