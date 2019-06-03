@@ -30,7 +30,6 @@ class App extends React.Component {
           />
           <Comments path="/articles/:id/comments" />
           <Topics path="/topics" />
-          {/* <LoginBox path="/login" loginUser={this.loginUser} /> */}
           <Voter path="/voter" />
         </Router>
       </div>
