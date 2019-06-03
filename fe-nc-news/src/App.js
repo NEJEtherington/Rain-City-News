@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import { Router, navigate } from "@reach/router";
+import { Router } from "@reach/router";
 import Header from "./Components/Header";
-import Articles from "./Components/Articles";
 import Topics from "./Components/Topics";
 import SingleArticle from "./Components/SingleArticle";
 import Comments from "./Components/Comments";
 import Voter from "./Components/Voter";
+import ArticlesPage from "./Components/ArticlesPage";
 
 class App extends React.Component {
   state = {
@@ -22,8 +22,8 @@ class App extends React.Component {
           loginUser={this.loginUser}
         />
         <Router>
-          <Articles path="/articles" />
-          <Articles path="/topics/:topic" />
+          <ArticlesPage path="/articles" />
+          <ArticlesPage path="/topics/:topic" />
           <SingleArticle
             path="/articles/:id"
             username={this.state.currentUser}

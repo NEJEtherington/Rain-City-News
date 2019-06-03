@@ -1,9 +1,9 @@
-import React from "react";
-import "../App.css";
+import React, { Component } from "react";
+import ArticlesList from "./ArticlesList";
 import { getArticles } from "../Api";
-import ArticleCard from "./ArticleCard";
+import "../App.css";
 
-class Articles extends React.Component {
+export default class ArticlesPage extends Component {
   state = {
     articles: [],
     sortBy: null
@@ -25,16 +25,8 @@ class Articles extends React.Component {
               Votes
             </button>
           </div>
+          <ArticlesList articles={this.state.articles} />
         </div>
-        {this.state.articles.map(article => {
-          return (
-            <div key={article.article_id} className="card">
-              <ul className="list">
-                <ArticleCard article={article} />
-              </ul>
-            </div>
-          );
-        })}
       </div>
     );
   }
@@ -58,5 +50,3 @@ class Articles extends React.Component {
       });
   }
 }
-
-export default Articles;
