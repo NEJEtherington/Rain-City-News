@@ -16,6 +16,7 @@ class PostComment extends React.Component {
             type="text"
             value={this.state.commentInput}
           />
+          <br />
           <button>Post comment!</button>
         </form>
       </div>
