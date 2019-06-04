@@ -1,6 +1,9 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudRain } from "@fortawesome/free-solid-svg-icons";
 import "../App.css";
 import { Link } from "@reach/router";
+import GoogleFontLoader from "react-google-font-loader";
 import LoginBox from "./LoginBox";
 
 class Header extends React.Component {
@@ -13,8 +16,22 @@ class Header extends React.Component {
         <nav>
           <ul className="navbar">
             <Link to="/articles">
-              <li className="ncnews">NC News</li>
+              <FontAwesomeIcon className="icon" icon={faCloudRain} size="3x" />
             </Link>
+            <GoogleFontLoader
+              fonts={[
+                {
+                  font: "IM Fell DW Pica SC",
+                  weights: [400, "400i"]
+                }
+              ]}
+            />
+            <h3
+              style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+              className="mainheader"
+            >
+              Rain City News
+            </h3>
             <Link to="/topics">
               <li className="header">
                 <button>Topics</button>
