@@ -34,16 +34,28 @@ class Header extends React.Component {
             </h3>
             <Link to="/topics">
               <li className="header">
-                <button>Topics</button>
+                <button
+                  style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+                >
+                  Topics
+                </button>
               </li>
             </Link>
             {!this.props.currentUser ? (
               <li className="header">
-                <button onClick={this.handleClick}>Login</button>
+                <button
+                  style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+                  onClick={this.handleClick}
+                >
+                  Login
+                </button>
               </li>
             ) : (
               <li>
-                <button onClick={this.props.logoutUser}>
+                <button
+                  style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+                  onClick={this.props.logoutUser}
+                >
                   Logout: {this.props.currentUser}
                 </button>
               </li>

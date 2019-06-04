@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GoogleFontLoader from "react-google-font-loader";
 import ArticlesList from "./ArticlesList";
 import { getArticles } from "../Api";
 import "../App.css";
@@ -12,14 +13,34 @@ class ArticlesPage extends Component {
   render() {
     return (
       <div>
+        <GoogleFontLoader
+          fonts={[
+            {
+              font: "IM Fell DW Pica SC",
+              weights: [400, "400i"]
+            }
+          ]}
+        />
         <div className="sortBy">
-          <button onClick={this.handleClick} value={"created_at"}>
+          <button
+            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+            onClick={this.handleClick}
+            value={"created_at"}
+          >
             Sort by Date
           </button>
-          <button onClick={this.handleClick} value={"comment_count"}>
+          <button
+            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+            onClick={this.handleClick}
+            value={"comment_count"}
+          >
             Sort by Comments
           </button>
-          <button onClick={this.handleClick} value={"votes"}>
+          <button
+            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+            onClick={this.handleClick}
+            value={"votes"}
+          >
             Sort by Votes
           </button>
         </div>
