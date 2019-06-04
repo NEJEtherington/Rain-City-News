@@ -18,6 +18,10 @@ class ArticleCard extends React.Component {
               {
                 font: "IM Fell DW Pica SC",
                 weights: [400, "400i"]
+              },
+              {
+                font: "IM Fell DW Pica",
+                weights: [400, "400i"]
               }
             ]}
           />
@@ -25,14 +29,24 @@ class ArticleCard extends React.Component {
             {article.title}
           </h3>
         </Link>
-        <p>Topic: {article.topic}</p>
+        <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Topic: {article.topic}
+        </p>
         {this.state.userAvatar && (
           <img className="avatar" alt="avatar" src={this.state.userAvatar} />
         )}
-        <p>Author: {article.author}</p>
-        <p>Posted: {new Date(article.created_at).toLocaleString()}</p>
-        <p>Votes: {article.votes}</p>
-        <p>Comments: {article.comment_count}</p>
+        <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Author: {article.author}
+        </p>
+        <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Posted: {new Date(article.created_at).toLocaleString()}
+        </p>
+        <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Votes: {article.votes}
+        </p>
+        <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Comments: {article.comment_count}
+        </p>
         <br />
       </li>
     );

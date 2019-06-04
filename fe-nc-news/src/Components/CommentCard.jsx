@@ -1,4 +1,5 @@
 import React from "react";
+import GoogleFontLoader from "react-google-font-loader";
 import Voter from "./Voter";
 import { deleteComment, getUser } from "../Api";
 
@@ -14,9 +15,30 @@ class CommentCard extends React.Component {
         {this.state.userAvatar && (
           <img className="avatar" alt="avatar" src={this.state.userAvatar} />
         )}
-        <h5>Author: {author}</h5>
-        <h5>Posted: {new Date(created_at).toLocaleString()}</h5>
-        <p className="commentText">{body}</p>
+        <GoogleFontLoader
+          fonts={[
+            {
+              font: "IM Fell DW Pica SC",
+              weights: [400, "400i"]
+            },
+            {
+              font: "IM Fell DW Pica",
+              weights: [400, "400i"]
+            }
+          ]}
+        />
+        <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Author: {author}
+        </h5>
+        <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Posted: {new Date(created_at).toLocaleString()}
+        </h5>
+        <p
+          style={{ fontFamily: "IM Fell DW Pica, monospaced" }}
+          className="commentText"
+        >
+          {body}
+        </p>
         {username && <Voter votes={votes} id={comment_id} type="comment" />}
         {username === author && (
           <button

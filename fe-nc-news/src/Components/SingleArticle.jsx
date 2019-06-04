@@ -23,11 +23,36 @@ class SingleArticle extends React.Component {
                 src={this.state.userAvatar}
               />
             )}
-            <h5>Author: {article.author}</h5>
-            <h5>Posted: {new Date(article.created_at).toLocaleString()}</h5>
-            <h3>{article.title}</h3>
-            <h5>Topic: {article.topic}</h5>
-            <p className="text">{article.body}</p>
+            <GoogleFontLoader
+              fonts={[
+                {
+                  font: "IM Fell DW Pica SC",
+                  weights: [400, "400i"]
+                },
+                {
+                  font: "IM Fell DW Pica",
+                  weights: [400, "400i"]
+                }
+              ]}
+            />
+            <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+              Author: {article.author}
+            </h5>
+            <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+              Posted: {new Date(article.created_at).toLocaleString()}
+            </h5>
+            <h2 style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
+              {article.title}
+            </h2>
+            <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+              Topic: {article.topic}
+            </h5>
+            <p
+              style={{ fontFamily: "IM Fell DW Pica, monospaced" }}
+              className="text"
+            >
+              {article.body}
+            </p>
             {this.props.username && (
               <Voter
                 votes={article.votes}
@@ -35,14 +60,7 @@ class SingleArticle extends React.Component {
                 type="article"
               />
             )}
-            <GoogleFontLoader
-              fonts={[
-                {
-                  font: "IM Fell DW Pica SC",
-                  weights: [400, "400i"]
-                }
-              ]}
-            />
+
             <h3
               className="center"
               style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
@@ -52,22 +70,12 @@ class SingleArticle extends React.Component {
             <Comments id={this.props.id} username={this.props.username} />
           </>
         ) : (
-          <>
-            <GoogleFontLoader
-              fonts={[
-                {
-                  font: "IM Fell DW Pica SC",
-                  weights: [400, "400i"]
-                }
-              ]}
-            />
-            <h2
-              style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
-              className="center"
-            >
-              loading...
-            </h2>
-          </>
+          <h2
+            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+            className="center"
+          >
+            loading...
+          </h2>
         )}
       </div>
     );
