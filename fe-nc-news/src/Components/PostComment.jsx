@@ -9,7 +9,7 @@ class PostComment extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="center">
           <br />
           <textarea
             onChange={this.handleInput}
@@ -31,11 +31,9 @@ class PostComment extends React.Component {
     const { id, username, updatePostedComments } = this.props;
     const { commentInput } = this.state;
     event.preventDefault();
-    username
-      ? postComment(id, username, commentInput).then(res =>
-          updatePostedComments(res.data.comment)
-        )
-      : alert("please log in to post a comment!");
+    postComment(id, username, commentInput).then(res =>
+      updatePostedComments(res.data.comment)
+    );
     this.setState({ commentInput: "" });
   };
 }
