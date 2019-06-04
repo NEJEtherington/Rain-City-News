@@ -27,7 +27,7 @@ class ArticleCard extends React.Component {
         </Link>
         <p>Topic: {article.topic}</p>
         {this.state.userAvatar && (
-          <img alt="avatar" src={this.state.userAvatar} />
+          <img className="avatar" alt="avatar" src={this.state.userAvatar} />
         )}
         <p>Author: {article.author}</p>
         <p>Posted: {new Date(article.created_at).toLocaleString()}</p>

@@ -21,7 +21,7 @@ class Comments extends React.Component {
         )}
         {this.state.comments.map(comment => {
           return (
-            <div key={comment.comment_id}>
+            <div key={comment.comment_id} className="card">
               <ul className="list">
                 <CommentCard
                   comment={comment}

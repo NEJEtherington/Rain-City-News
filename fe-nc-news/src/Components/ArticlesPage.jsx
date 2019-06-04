@@ -12,21 +12,18 @@ class ArticlesPage extends Component {
   render() {
     return (
       <div>
-        <div className="dropdown">
-          <h5 className="dropbtn">Sort by</h5>
-          <div className="dropdown-content">
-            <button onClick={this.handleClick} value={"created_at"}>
-              Posted
-            </button>
-            <button onClick={this.handleClick} value={"comment_count"}>
-              Comments
-            </button>
-            <button onClick={this.handleClick} value={"votes"}>
-              Votes
-            </button>
-          </div>
-          <ArticlesList articles={this.state.articles} />
+        <div className="sortBy">
+          <button onClick={this.handleClick} value={"created_at"}>
+            Sort by Date
+          </button>
+          <button onClick={this.handleClick} value={"comment_count"}>
+            Sort by Comments
+          </button>
+          <button onClick={this.handleClick} value={"votes"}>
+            Sort by Votes
+          </button>
         </div>
+        <ArticlesList articles={this.state.articles} />
       </div>
     );
   }

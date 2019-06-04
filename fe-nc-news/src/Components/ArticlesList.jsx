@@ -8,7 +8,7 @@ const ArticlesList = props => {
       {props.articles.map(article => {
         return (
           <div key={article.article_id} className="card">
-            <ul className="list">
+            <ul className="center">
               <ArticleCard article={article} />
             </ul>
           </div>
