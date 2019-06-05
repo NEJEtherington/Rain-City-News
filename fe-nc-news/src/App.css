@@ -55,6 +55,10 @@ textarea {
   flex-direction: row;
 }
 
+.sortByItem {
+  flex-grow: 1;
+}
+
 .center {
   text-align: center;
 }
