@@ -1,5 +1,4 @@
 import React from "react";
-import GoogleFontLoader from "react-google-font-loader";
 import { getSingleArticle, getUser } from "../Api";
 import Comments from "./Comments";
 import Voter from "./Voter";
@@ -24,18 +23,6 @@ class SingleArticle extends React.Component {
                 src={this.state.userAvatar}
               />
             )}
-            <GoogleFontLoader
-              fonts={[
-                {
-                  font: "IM Fell DW Pica SC",
-                  weights: [400, "400i"]
-                },
-                {
-                  font: "IM Fell DW Pica",
-                  weights: [400, "400i"]
-                }
-              ]}
-            />
             <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
               Author: {article.author}
             </h5>
@@ -78,18 +65,15 @@ class SingleArticle extends React.Component {
   }
 
   componentDidMount() {
-    getSingleArticle(this.props.id).then(article => {
-      this.setState({ article });
-    });
-  }
-
-  componentDidUpdate() {
-    if (this.state.article) {
-      const username = this.state.article.author;
-      getUser(username).then(user =>
-        this.setState({ userAvatar: user.avatar_url })
-      );
-    }
+    getSingleArticle(this.props.id)
+      .then(article => {
+        this.setState({ article });
+      })
+      .then(() => {
+        getUser(this.state.article.author).then(user =>
+          this.setState({ userAvatar: user.avatar_url })
+        );
+      });
   }
 }
 
