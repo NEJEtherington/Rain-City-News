@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleFontLoader from "react-google-font-loader";
+import LoadingMessage from "./LoadingMessage";
 import ArticlesList from "./ArticlesList";
 import { getArticles } from "../Api";
 import "../App.css";
@@ -44,7 +45,12 @@ class ArticlesPage extends Component {
             Sort by Votes
           </button>
         </div>
-        <ArticlesList articles={this.state.articles} />
+
+        {!this.state.articles.length ? (
+          <LoadingMessage />
+        ) : (
+          <ArticlesList articles={this.state.articles} />
+        )}
       </div>
     );
   }

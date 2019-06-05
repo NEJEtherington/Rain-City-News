@@ -3,6 +3,7 @@ import GoogleFontLoader from "react-google-font-loader";
 import { getSingleArticle, getUser } from "../Api";
 import Comments from "./Comments";
 import Voter from "./Voter";
+import LoadingMessage from "./LoadingMessage";
 
 class SingleArticle extends React.Component {
   state = {
@@ -70,12 +71,7 @@ class SingleArticle extends React.Component {
             <Comments id={this.props.id} username={this.props.username} />
           </>
         ) : (
-          <h2
-            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
-            className="center"
-          >
-            loading...
-          </h2>
+          <LoadingMessage />
         )}
       </div>
     );
