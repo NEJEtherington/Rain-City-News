@@ -3,10 +3,11 @@ import GoogleFontLoader from "react-google-font-loader";
 import "../App.css";
 import { Link } from "@reach/router";
 import { getTopics } from "../Api";
+import LoadingMessage from "./LoadingMessage";
 
 class Topics extends React.Component {
   state = {
-    topics: []
+    topics: null
   };
 
   render() {
@@ -20,19 +21,25 @@ class Topics extends React.Component {
             }
           ]}
         />
-        {this.state.topics.map(topic => {
-          return (
-            <div key={topic.slug}>
-              <ul className="list">
-                <Link to={`/topics/${topic.slug}`}>
-                  <li style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
-                    {topic.description}
-                  </li>
-                </Link>
-              </ul>
-            </div>
-          );
-        })}
+        {this.state.topics ? (
+          this.state.topics.map(topic => {
+            return (
+              <div key={topic.slug}>
+                <ul className="list">
+                  <Link to={`/topics/${topic.slug}`}>
+                    <li
+                      style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+                    >
+                      {topic.description}
+                    </li>
+                  </Link>
+                </ul>
+              </div>
+            );
+          })
+        ) : (
+          <LoadingMessage />
+        )}
       </div>
     );
   }
