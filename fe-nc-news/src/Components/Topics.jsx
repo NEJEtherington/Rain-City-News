@@ -1,4 +1,5 @@
 import React from "react";
+import GoogleFontLoader from "react-google-font-loader";
 import "../App.css";
 import { Link } from "@reach/router";
 import { getTopics } from "../Api";
@@ -11,12 +12,22 @@ class Topics extends React.Component {
   render() {
     return (
       <div>
+        <GoogleFontLoader
+          fonts={[
+            {
+              font: "IM Fell DW Pica SC",
+              weights: [400, "400i"]
+            }
+          ]}
+        />
         {this.state.topics.map(topic => {
           return (
             <div key={topic.slug}>
               <ul className="list">
                 <Link to={`/topics/${topic.slug}`}>
-                  <li>{topic.description}</li>
+                  <li style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
+                    {topic.description}
+                  </li>
                 </Link>
               </ul>
             </div>
