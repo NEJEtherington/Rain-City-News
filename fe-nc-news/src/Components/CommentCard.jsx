@@ -41,11 +41,9 @@ class CommentCard extends React.Component {
         </p>
         {username && <Voter votes={votes} id={comment_id} type="comment" />}
         {username === author && (
-          <button
-            onClick={() =>
-              deleteComment(comment_id).then(updateForDeletedComment)
-            }
-          >
+          <button style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
+            onClick=
+            {() => deleteComment(comment_id).then(updateForDeletedComment)}>
             Delete Comment
           </button>
         )}
