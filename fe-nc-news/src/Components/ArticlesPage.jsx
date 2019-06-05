@@ -27,13 +27,31 @@ class ArticlesPage extends Component {
             style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
             onClick={this.handleClick}
             value={"created_at"}
+            className="sortByItem"
           >
             Sort by Date
           </button>
           <button
             style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
             onClick={this.handleClick}
+            value={"author"}
+            className="sortByItem"
+          >
+            Sort by Author
+          </button>
+          <button
+            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+            onClick={this.handleClick}
+            value={"title"}
+            className="sortByItem"
+          >
+            Sort by Title
+          </button>
+          <button
+            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+            onClick={this.handleClick}
             value={"comment_count"}
+            className="sortByItem"
           >
             Sort by Comments
           </button>
@@ -41,6 +59,7 @@ class ArticlesPage extends Component {
             style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
             onClick={this.handleClick}
             value={"votes"}
+            className="sortByItem"
           >
             Sort by Votes
           </button>
@@ -67,7 +86,7 @@ class ArticlesPage extends Component {
   }
 
   componentDidUpdate(_, prevState) {
-    const query = { sort_by: this.state.sortBy };
+    const query = { sort_by: this.state.sortBy, topic: this.props.topic };
     this.state.sortBy !== prevState.sortBy &&
       getArticles(query).then(articles => {
         this.setState({ articles });
