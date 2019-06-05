@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllo } from "@fortawesome/free-brands-svg-icons";
 import { faMehRollingEyes } from "@fortawesome/free-solid-svg-icons";
-import GoogleFontLoader from "react-google-font-loader";
 import { patchArticleVotes, patchCommentVotes } from "../Api";
 
 class Voter extends Component {
@@ -20,14 +19,6 @@ class Voter extends Component {
         >
           <FontAwesomeIcon className="icon" icon={faEllo} size="2x" />
         </button>
-        <GoogleFontLoader
-          fonts={[
-            {
-              font: "IM Fell DW Pica SC",
-              weights: [400, "400i"]
-            }
-          ]}
-        />
         <h3 id="voter" style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
           {this.state.votes + this.props.votes}
         </h3>

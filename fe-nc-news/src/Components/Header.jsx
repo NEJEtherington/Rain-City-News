@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudRain } from "@fortawesome/free-solid-svg-icons";
 import "../App.css";
 import { Link } from "@reach/router";
-import GoogleFontLoader from "react-google-font-loader";
 import LoginBox from "./LoginBox";
 
 class Header extends React.Component {
@@ -18,14 +17,6 @@ class Header extends React.Component {
             <Link to="/articles">
               <FontAwesomeIcon className="icon" icon={faCloudRain} size="3x" />
             </Link>
-            <GoogleFontLoader
-              fonts={[
-                {
-                  font: "IM Fell DW Pica SC",
-                  weights: [400, "400i"]
-                }
-              ]}
-            />
             <h3
               style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
               className="mainheader"
