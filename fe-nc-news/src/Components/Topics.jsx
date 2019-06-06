@@ -24,7 +24,7 @@ class Topics extends React.Component {
         {this.state.topics ? (
           this.state.topics.map(topic => {
             return (
-              <div key={topic.slug}>
+              <div key={topic.slug} className="center">
                 <ul className="list">
                   <Link to={`/topics/${topic.slug}`}>
                     <li
