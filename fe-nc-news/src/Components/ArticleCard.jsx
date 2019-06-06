@@ -12,7 +12,6 @@ class ArticleCard extends React.Component {
   render() {
     const article = this.props.article;
     const date = moment(article.created_at);
-    console.log(article.created_at);
     const newArticle = (
       <li>
         <Link to={`/articles/${article.article_id}`}>
