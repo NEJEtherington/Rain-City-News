@@ -98,10 +98,18 @@ class ArticlesPage extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const query = { sort_by: this.state.sortBy, topic: this.props.topic };
-    (this.state.sortBy !== prevState.sortBy || this.props !== prevProps) &&
-      getArticles(query).then(articles => {
-        this.setState({ articles });
-      });
+    (this.state.sortBy !== prevState.sortBy ||
+      this.props.topic !== prevProps.topic) &&
+      getArticles(query)
+        .then(articles => {
+          this.setState({ articles, err: null });
+        })
+        .catch(({ response }) => {
+          const errMessage = response.data.msg;
+          const errCode = response.status;
+          const err = { errMessage, errCode };
+          this.setState({ err });
+        });
   }
 }
 
