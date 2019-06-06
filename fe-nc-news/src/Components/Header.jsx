@@ -60,7 +60,7 @@ class Header extends React.Component {
     );
   }
   handleClick = () => {
-    this.setState({ loginbox: true });
+    this.setState({ loginbox: !this.state.loginbox });
   };
 }
 
