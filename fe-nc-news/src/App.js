@@ -7,6 +7,7 @@ import SingleArticle from "./Components/SingleArticle";
 import Comments from "./Components/Comments";
 import Voter from "./Components/Voter";
 import ArticlesPage from "./Components/ArticlesPage";
+import Error from "./Components/Error";
 
 class App extends React.Component {
   state = {
@@ -31,6 +32,7 @@ class App extends React.Component {
           <Comments path="/articles/:id/comments" />
           <Topics path="/topics" />
           <Voter path="/voter" />
+          <Error default />
         </Router>
       </div>
     );

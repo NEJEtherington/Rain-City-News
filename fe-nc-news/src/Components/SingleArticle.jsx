@@ -3,15 +3,18 @@ import { getSingleArticle, getUser } from "../Api";
 import Comments from "./Comments";
 import Voter from "./Voter";
 import LoadingMessage from "./LoadingMessage";
+import Error from "./Error";
 
 class SingleArticle extends React.Component {
   state = {
     article: null,
-    userAvatar: null
+    userAvatar: null,
+    err: null
   };
 
   render() {
-    const { article } = this.state;
+    const { article, err } = this.state;
+    if (err) return <Error err={err} />;
     return (
       <div>
         {article ? (
@@ -73,6 +76,12 @@ class SingleArticle extends React.Component {
         getUser(this.state.article.author).then(user =>
           this.setState({ userAvatar: user.avatar_url })
         );
+      })
+      .catch(({ response }) => {
+        const errMessage = response.data.msg;
+        const errCode = response.status;
+        const err = { errMessage, errCode };
+        this.setState({ err });
       });
   }
 }

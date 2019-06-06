@@ -2,16 +2,20 @@ import React, { Component } from "react";
 import GoogleFontLoader from "react-google-font-loader";
 import LoadingMessage from "./LoadingMessage";
 import ArticlesList from "./ArticlesList";
+import Error from "./Error";
 import { getArticles } from "../Api";
 import "../App.css";
 
 class ArticlesPage extends Component {
   state = {
     articles: [],
-    sortBy: null
+    sortBy: null,
+    err: null
   };
 
   render() {
+    const { err } = this.state;
+    if (err) return <Error err={err} />;
     return (
       <div>
         <GoogleFontLoader
@@ -80,9 +84,16 @@ class ArticlesPage extends Component {
 
   componentDidMount() {
     const queries = { topic: this.props.topic };
-    getArticles(queries).then(articles => {
-      this.setState({ articles });
-    });
+    getArticles(queries)
+      .then(articles => {
+        this.setState({ articles });
+      })
+      .catch(({ response }) => {
+        const errMessage = response.data.msg;
+        const errCode = response.status;
+        const err = { errMessage, errCode };
+        this.setState({ err });
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
