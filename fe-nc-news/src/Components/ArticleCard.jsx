@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import GoogleFontLoader from "react-google-font-loader";
 import { getUser } from "../Api";
+const moment = require("moment");
 
 class ArticleCard extends React.Component {
   state = {
@@ -10,6 +11,7 @@ class ArticleCard extends React.Component {
 
   render() {
     const article = this.props.article;
+    const date = moment(article.created_at);
     const newArticle = (
       <li>
         <Link to={`/articles/${article.article_id}`}>
@@ -36,10 +38,10 @@ class ArticleCard extends React.Component {
           <img className="avatar" alt="avatar" src={this.state.userAvatar} />
         )}
         <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-          Author: {article.author}
+          {article.author}
         </p>
         <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-          Posted: {new Date(article.created_at).toLocaleString()}
+          {date._d.toString().slice(0, -30)}
         </p>
         <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
           Votes: {article.votes}

@@ -2,6 +2,7 @@ import React from "react";
 import Voter from "./Voter";
 import { deleteComment, getUser } from "../Api";
 import "../App.css";
+const moment = require("moment");
 
 class CommentCard extends React.Component {
   state = {
@@ -10,16 +11,15 @@ class CommentCard extends React.Component {
   render() {
     const { comment, username, updateForDeletedComment } = this.props;
     const { author, created_at, body, votes, comment_id } = comment;
+    const date = moment(created_at);
     const newComment = (
       <li>
         {this.state.userAvatar && (
           <img className="avatar" alt="avatar" src={this.state.userAvatar} />
         )}
+        <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{author}</h5>
         <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-          Author: {author}
-        </h5>
-        <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-          Posted: {new Date(created_at).toLocaleString()}
+          {date._d.toString().slice(0, -30)}
         </h5>
         <p
           style={{ fontFamily: "IM Fell DW Pica, monospaced" }}
