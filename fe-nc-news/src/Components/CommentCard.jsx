@@ -1,6 +1,7 @@
 import React from "react";
 import Voter from "./Voter";
 import { deleteComment, getUser } from "../Api";
+import "../App.css";
 
 class CommentCard extends React.Component {
   state = {
@@ -28,14 +29,16 @@ class CommentCard extends React.Component {
         </p>
         {username && <Voter votes={votes} id={comment_id} type="comment" />}
         {username === author && (
-          <button
-            style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
-            onClick={() =>
-              deleteComment(comment_id).then(updateForDeletedComment)
-            }
-          >
-            Delete Comment
-          </button>
+          <div className="center">
+            <button
+              style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
+              onClick={() =>
+                deleteComment(comment_id).then(updateForDeletedComment)
+              }
+            >
+              Delete Comment
+            </button>
+          </div>
         )}
       </li>
     );
