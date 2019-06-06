@@ -12,6 +12,7 @@ class ArticleCard extends React.Component {
   render() {
     const article = this.props.article;
     const date = moment(article.created_at);
+    console.log(article.created_at);
     const newArticle = (
       <li>
         <Link to={`/articles/${article.article_id}`}>
@@ -41,7 +42,7 @@ class ArticleCard extends React.Component {
           {article.author}
         </p>
         <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-          {date._d.toString().slice(0, -30)}
+          {date._d.toString().slice(0, -34)}
         </p>
         <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
           Votes: {article.votes}

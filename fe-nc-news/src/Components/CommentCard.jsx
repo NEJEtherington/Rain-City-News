@@ -19,7 +19,7 @@ class CommentCard extends React.Component {
         )}
         <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{author}</h5>
         <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-          {date._d.toString().slice(0, -30)}
+          {date._d.toString().slice(0, -34)}
         </h5>
         <p
           style={{ fontFamily: "IM Fell DW Pica, monospaced" }}
