@@ -1,4 +1,5 @@
 import React from "react";
+import GoogleFontLoader from "react-google-font-loader";
 import { getSingleArticle, getUser } from "../Api";
 import Comments from "./Comments";
 import Voter from "./Voter";
@@ -17,6 +18,18 @@ class SingleArticle extends React.Component {
     if (err) return <Error err={err} />;
     return (
       <div>
+        <GoogleFontLoader
+          fonts={[
+            {
+              font: "IM Fell DW Pica SC",
+              weights: [400, "400i"]
+            },
+            {
+              font: "IM Fell DW Pica",
+              weights: [400, "400i"]
+            }
+          ]}
+        />
         {article ? (
           <>
             {this.state.userAvatar && (
