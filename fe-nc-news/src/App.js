@@ -23,6 +23,7 @@ class App extends React.Component {
           loginUser={this.loginUser}
         />
         <Router>
+          <ArticlesPage path="/" />
           <ArticlesPage path="/articles" />
           <ArticlesPage path="/topics/:topic" />
           <SingleArticle
