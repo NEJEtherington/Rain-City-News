@@ -31,8 +31,9 @@ class LoginBox extends React.Component {
           id="textInput"
           onChange={this.handleInput}
           type="text"
-          placeholder="Enter username"
+          placeholder="Enter username e.g. weegembump"
           require="true"
+          size="30"
         />
         <button
           style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
