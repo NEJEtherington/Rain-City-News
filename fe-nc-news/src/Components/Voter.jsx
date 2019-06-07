@@ -29,7 +29,7 @@ class Voter extends Component {
           }}
           disabled={this.state.votes === -1}
         >
-          <FontAwesomeIcon icon={faMehRollingEyes} size="2x" />
+          <FontAwesomeIcon className="icon" icon={faMehRollingEyes} size="2x" />
         </button>
       </div>
     );
