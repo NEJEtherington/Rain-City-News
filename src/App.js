@@ -16,7 +16,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <Header
           currentUser={this.state.currentUser}
           logoutUser={this.logoutUser}
