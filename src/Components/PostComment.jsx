@@ -37,7 +37,10 @@ class PostComment extends React.Component {
           <br />
           <button
             style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
-            disabled={this.state.commentInput === ""}
+            disabled={
+              this.state.commentInput === "" ||
+              /^\s*$/.test(this.state.commentInput)
+            }
           >
             Post comment
           </button>
