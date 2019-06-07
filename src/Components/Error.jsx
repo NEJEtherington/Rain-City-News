@@ -14,13 +14,13 @@ const Error = ({ err }) => {
           ]}
         />
         <h2
-          className="center"
+          className="error"
           style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
         >
           404
         </h2>
         <h2
-          className="center"
+          className="error"
           style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
         >
           Oops, not found!
@@ -28,7 +28,7 @@ const Error = ({ err }) => {
       </>
     );
   return (
-    <div className="center">
+    <div className="error">
       <GoogleFontLoader
         fonts={[
           {

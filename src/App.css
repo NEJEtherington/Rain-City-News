@@ -135,3 +135,18 @@ button:focus {
 button:active {
   transform: scale(0.99);
 }
+
+.error {
+  text-align: center;
+  width: 100%;
+  animation: left_to_right 3s ease;
+}
+
+@keyframes left_to_right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
