@@ -5,6 +5,7 @@ import Comments from "./Comments";
 import Voter from "./Voter";
 import LoadingMessage from "./LoadingMessage";
 import Error from "./Error";
+const moment = require("moment");
 
 class SingleArticle extends React.Component {
   state = {
@@ -40,10 +41,12 @@ class SingleArticle extends React.Component {
               />
             )}
             <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-              Author: {article.author}
+              {article.author}
             </h5>
             <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-              Posted: {new Date(article.created_at).toLocaleString()}
+              {moment(article.created_at)
+                ._d.toString()
+                .slice(0, -34)}
             </h5>
             <h2 style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
               {article.title}
