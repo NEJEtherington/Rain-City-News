@@ -1,6 +1,6 @@
 # Rain City News
 
-Front-end for the NC News API, built using React.
+Front-end for the NC-news API, built using React.
 The interface allows users to log in as an existing user, comment on existing articles, and vote on articles and comments. Users can also delete their own comments.
 
 Hosted on Netlify : https://rain-city-news.netlify.com  
@@ -8,7 +8,7 @@ Back End hosted on Heroku: https://nick-nc-news.herokuapp.com/api
 Back End repo: https://github.com/NEJEtherington/NC-news
 ### Getting Started
 
-You will need node.js (at least v11.0.0) and npm (at least version 6.4.1) and a text editor such as VS code.
+You will need node.js (at least v11.13.0) and npm (at least version 6.9.0) and a text editor such as VS code.
 
 Fork and clone this project locally, then use npm to install dependencies:
 
