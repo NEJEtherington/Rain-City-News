@@ -18,7 +18,7 @@ class SingleArticle extends React.Component {
     const { article, err } = this.state;
     if (err) return <Error err={err} />;
     return (
-      <div>
+      <div className="singleArticle">
         <GoogleFontLoader
           fonts={[
             {
@@ -40,9 +40,7 @@ class SingleArticle extends React.Component {
                 src={this.state.userAvatar}
               />
             )}
-            <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-              {article.author}
-            </h5>
+            <h5 style={{ fontFamily: "IM Fell DW Pica" }}>{article.author}</h5>
             <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
               {moment(article.created_at)
                 ._d.toString()

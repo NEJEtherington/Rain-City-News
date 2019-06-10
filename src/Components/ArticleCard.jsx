@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import GoogleFontLoader from "react-google-font-loader";
 import { getUser } from "../Api";
+import "../App.css";
 const moment = require("moment");
 
 class ArticleCard extends React.Component {
