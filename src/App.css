@@ -5,9 +5,9 @@
 .mainheader {
   text-align: center;
   font-size: 40px;
-  /* padding: 10px; */
-  /* border: 0px none; */
   margin: 0px 0px 0px 0px;
+
+  background-size: 20px 20px;
 }
 
 .icon {
@@ -22,9 +22,8 @@
 
 .navbar {
   list-style-type: none;
-  background-color: #dddddd;
   text-align: right;
-  padding: 5px 5px 5px 5px;
+  background-image: linear-gradient(#dddddd, white);
   margin: 0px 0px 0px 0px;
 }
 
@@ -43,6 +42,7 @@ li {
   margin: 5px 40px 5px 40px;
   padding: 7px 7px 7px 7px;
   border-radius: 25px;
+  background-image: linear-gradient(#dddddd, white);
 }
 
 .card:hover {
@@ -126,6 +126,8 @@ button {
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+  background-image: linear-gradient(#dddddd, white);
+  border-radius: 5px;
 }
 
 button:hover,
