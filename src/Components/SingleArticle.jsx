@@ -42,9 +42,7 @@ class SingleArticle extends React.Component {
             )}
             <h5 style={{ fontFamily: "IM Fell DW Pica" }}>{article.author}</h5>
             <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-              {moment(article.created_at)
-                ._d.toString()
-                .slice(0, -34)}
+              {moment(article.created_at).fromNow()}
             </h5>
             <h2 style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
               {article.title}

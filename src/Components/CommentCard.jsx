@@ -7,14 +7,12 @@ const moment = require("moment");
 const CommentCard = props => {
   const { comment, username, updateForDeletedComment } = props;
   const { author, created_at, body, votes, comment_id, avatar_url } = comment;
-  const date = moment(created_at);
+  const date = moment(created_at).fromNow();
   const newComment = (
     <li>
       <img className="avatar" alt="avatar" src={avatar_url} />
       <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{author}</h5>
-      <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-        {date._d.toString().slice(0, -34)}
-      </h5>
+      <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{date}</h5>
       <p
         style={{ fontFamily: "IM Fell DW Pica, monospaced" }}
         className="commentText"

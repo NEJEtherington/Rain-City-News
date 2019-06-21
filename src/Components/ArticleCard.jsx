@@ -6,7 +6,7 @@ const moment = require("moment");
 
 const ArticleCard = props => {
   const article = props.article;
-  const date = moment(article.created_at);
+  const date = moment(article.created_at).fromNow();
   const newArticle = (
     <li>
       <Link to={`/articles/${article.article_id}`}>
@@ -33,9 +33,7 @@ const ArticleCard = props => {
       <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
         {article.author}
       </p>
-      <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-        {date._d.toString().slice(0, -34)}
-      </p>
+      <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{date}</p>
       <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
         Votes: {article.votes}
       </p>
