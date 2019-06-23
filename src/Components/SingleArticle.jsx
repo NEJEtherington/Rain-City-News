@@ -70,7 +70,11 @@ class SingleArticle extends React.Component {
             >
               Comments
             </h3>
-            <Comments id={this.props.id} username={this.props.username} />
+            <Comments
+              id={this.props.id}
+              username={this.props.username}
+              userAvatar={this.state.userAvatar}
+            />
           </>
         ) : (
           <LoadingMessage />

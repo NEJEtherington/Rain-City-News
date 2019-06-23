@@ -66,9 +66,10 @@ class PostComment extends React.Component {
     const { id, username, updatePostedComments } = this.props;
     const { commentInput } = this.state;
     event.preventDefault();
-    postComment(id, username, commentInput).then(res =>
-      updatePostedComments(res.data.comment)
-    );
+    postComment(id, username, commentInput).then(res => {
+      res.data.comment.avatar_url = this.props.userAvatar;
+      updatePostedComments(res.data.comment);
+    });
     this.setState({ commentInput: "", newPost: true });
   };
 }

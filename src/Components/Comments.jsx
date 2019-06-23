@@ -16,6 +16,7 @@ class Comments extends React.Component {
           <PostComment
             id={this.props.id}
             username={this.props.username}
+            userAvatar={this.props.userAvatar}
             updatePostedComments={this.updatePostedComments}
           />
         )}
