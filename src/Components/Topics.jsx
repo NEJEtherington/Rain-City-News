@@ -12,7 +12,7 @@ class Topics extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="topics">
         <GoogleFontLoader
           fonts={[
             {
@@ -27,12 +27,16 @@ class Topics extends React.Component {
               <div key={topic.slug} className="center">
                 <ul className="list">
                   <Link to={`/topics/${topic.slug}`}>
-                    <li
+                    <button
                       style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}
                     >
-                      {topic.description}
-                    </li>
+                      {topic.slug}
+                    </button>
                   </Link>
+                  <br />
+                  <li style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
+                    {topic.description}
+                  </li>
                 </ul>
               </div>
             );

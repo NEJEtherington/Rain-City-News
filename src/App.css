@@ -174,4 +174,9 @@ p {
 
 ul {
   padding: 0;
+  margin: 2%;
+}
+
+#topics {
+  margin: 5% 1% 1% 1%;
 }
