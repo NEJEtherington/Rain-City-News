@@ -9,6 +9,15 @@ const ArticleCard = props => {
   const date = moment(article.created_at).fromNow();
   const newArticle = (
     <li>
+      <div className="cardHeaderFooter">
+        <div className="cardAvatarUsername">
+          <img className="avatar" alt="avatar" src={article.avatar_url} />
+          <h4 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+            {article.author}
+          </h4>
+        </div>
+        <h4 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{date}</h4>
+      </div>
       <Link to={`/articles/${article.article_id}`}>
         <GoogleFontLoader
           fonts={[
@@ -22,24 +31,21 @@ const ArticleCard = props => {
             }
           ]}
         />
-        <h3 style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
+        <h2 style={{ fontFamily: "IM Fell DW Pica SC, monospaced" }}>
           {article.title}
-        </h3>
+        </h2>
       </Link>
       <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
         Topic: {article.topic}
       </p>
-      <img className="avatar" alt="avatar" src={article.avatar_url} />
-      <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-        {article.author}
-      </p>
-      <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{date}</p>
-      <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-        Votes: {article.votes}
-      </p>
-      <p style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
-        Comments: {article.comment_count}
-      </p>
+      <div className="cardHeaderFooter">
+        <h4 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Votes: {article.votes}
+        </h4>
+        <h4 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+          Comments: {article.comment_count}
+        </h4>
+      </div>
       <br />
     </li>
   );

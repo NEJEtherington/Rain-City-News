@@ -10,9 +10,15 @@ const CommentCard = props => {
   const date = moment(created_at).fromNow();
   const newComment = (
     <li>
-      <img className="avatar" alt="avatar" src={avatar_url} />
-      <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{author}</h5>
-      <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{date}</h5>
+      <div className="cardHeaderFooter">
+        <div className="cardAvatarUsername">
+          <img className="avatar" alt="avatar" src={avatar_url} />
+          <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>
+            {author}
+          </h5>
+        </div>
+        <h5 style={{ fontFamily: "IM Fell DW Pica, monospaced" }}>{date}</h5>
+      </div>
       <p
         style={{ fontFamily: "IM Fell DW Pica, monospaced" }}
         className="commentText"

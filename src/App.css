@@ -17,8 +17,9 @@
 
 .votebutton {
   border-style: none;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background-image: none;
+  background-color: white;
 }
 
 .navbar {
@@ -43,7 +44,6 @@ li {
   margin: 5px 40px 5px 40px;
   padding: 7px 7px 7px 7px;
   border-radius: 25px;
-  background-image: linear-gradient(#dddddd, white);
 }
 
 .card:hover {
@@ -92,9 +92,9 @@ textarea {
 }
 
 .avatar {
-  max-width: 6%;
-  max-height: 6%;
-  height: auto;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
   border-radius: 50%;
   padding-left: 1%;
   padding-right: 1%;
@@ -170,6 +170,7 @@ h5 {
 
 p {
   margin: 1%;
+  padding: 1%;
 }
 
 ul {
@@ -179,4 +180,22 @@ ul {
 
 #topics {
   margin: 5% 1% 1% 1%;
+}
+
+.cardHeaderFooter {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.cardAvatarUsername {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h4 {
+  padding: 0% 2% 0% 2%;
+  margin: 1% 2% 1% 2%;
 }
