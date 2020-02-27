@@ -10,7 +10,7 @@
     "@reach/router": "^1.2.1",
     "axios": "^0.19.0",
     "moment": "^2.24.0",
-    "react": "^16.8.6",
+    "react": "^16.13.0",
     "react-dom": "^16.8.6",
     "react-google-font-loader": "^1.0.5",
     "react-scripts": "3.0.1"
